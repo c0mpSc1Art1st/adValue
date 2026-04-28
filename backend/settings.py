@@ -30,7 +30,10 @@ SECRET_KEY = 'django-insecure-k6t^x&0&knc5hd($is1xd=hcl&l3ez4^^pjmh_8%-15cqri@55
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# This reads the 'ALLOWED_HOSTS' variable from your environment
+# and splits it by commas into a list.
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
